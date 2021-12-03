@@ -1,0 +1,4 @@
+enum UserType {
+  coach,
+  student,
+}

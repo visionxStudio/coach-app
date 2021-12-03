@@ -1,0 +1,205 @@
+{
+    "welcome_page" : {
+        "welcome":  "Hey! Bienvenue",
+        "coach_anywhere1": "Faites-vous coacher n'importe ",
+        "coach_anywhere2": "où, n'importe quand",
+        "start" : "Commencer",
+        "already_account" : "J’ai déjà un compte",
+        "terms1" : "En vous connectant, vous acceptez les ",
+        "terms2" :" conditions générales d’utilisations et la politique de confidentialité",
+        "terms3" :" de DigiCoachMeEn vous connectant, vous acceptez les",
+        "terms4" : " conditions générales d’utilisations et la politique de confidentialité",
+        "terms5" : " de DigiCoachMe"
+    },
+
+    "mobile_number_page" : {
+        "enter_mobile" : "Entrez votre numéro de mobile",
+        "will_send_otp" : " Nous vous enverrons l'OTP pour vérifier l'utilisateur.",
+        "continue" : "Continuer",
+        "already_account" : "Vous avez déjà un compte?"
+    },
+
+    "verification_page" : {
+        "otp_verification" : "Vous avez déjà un compte?",
+        "five_digit_code" : "Entrez le numéro à cinq chiffres envoyé au numéro de mobile ",
+        "continue" : "Continuer",
+        "resend_otp" : "Vous n'avez pas reçu d'OTP? Renvoyer"
+    },
+    "connect_account"  : {
+        "connect_social_account" : "Connectez votre compte social",
+        "google_connect": "Continuer avec Google",
+        "facebook_connect"  : "Continuer avec Facebook",
+        "apple_connect"  : "Continuer avec Apple",
+        "continue"  : "Continuer",
+        "skip_now" : "Ignorer pour l'instant "
+    },
+    "profile_page" :  {
+        "choose_profile" : "Choisissez votre profil",
+        "particular" : "Je suis un particulier",
+        "coach" : "Je suis un coach"
+    },
+    "details_page" : {
+        "basic_information" : "Informations de base",
+        "little_intro" : "Nous voulons en savoir un peu plus sur vous. Remplissez vos informations de base.",
+        "add_photo" : "Ajoutez votre photo",
+        "name" : "Votre nom",
+        "dob" : "Date de naissance",
+        "email" : "Adresse e-mail",
+        "postal" : "Adresse postale",
+        "continue" : "Continuer",
+        "skip_now" : "Ignorer pour l'instant "
+    },
+    "wellbeignlevel_page": {
+        "title": "Niveau de bien-être",
+        "note": "NOTEZ-VOUS\n ET INFORMEZ VOTRE COACH",
+        "flexibilitylevel": "Niveau de souplesse",
+        "sleepquality": "Qualité du sommeil",
+        "stresslevel": "Niveau de stress",
+        "foodquality": "Qualité de l’alimentation",
+        "cancel": "Annuler",
+        "conform": "Confirmer"
+    },
+    "bio_page": {
+        "title": "Bio",
+        "writeyourbio": "ECRIVEZ VOTRE BIO",
+        "message": "Présentez-vous, dites aux coachs ce que vous aimez faire et de ce dont vous avez besoin.",
+        "cancel": "Annuler",
+        "conform": "Confirmer"
+    },
+    "goals_page": {
+        "title": "Objectifs",
+        "weightgain": "Prise de masse",
+        "physicalforce": "Force physique",
+        "weightloss": "Perte de poids",
+        "stressreduction": "Réduction du stress",
+        "increaseflexibility": "Augmenter la flexibilité",
+        "discovery": "Découverte",
+        "other": "Autre",
+        "cancel": "Annuler",
+        "conform": "Confirmer"
+    },
+    "ps_pi_page": {
+        "title": "Information personnelles",
+        "dateofbirth": "Date de naissance",
+        "address": "Adresse",
+        "codepostal": "Code postal",
+        "city": "Ville",
+        "country": "Pays",
+        "travelarea": "Zone de déplacement"
+    },
+    "modify_profile_page": {
+        "title": "Modifer profil",
+        "profilepicture": "Photo de profil",
+        "goals": "Objectifs",
+        "bio": "Bio",
+        "wellbinglevel": "Niveau de bien-être",
+        "physicalinformation": "Informations physiques"
+    },
+    "coach_profile_setting_page": {
+        "profile": "Profil",
+        "Digicoach": "Digicoach",
+        "membernum": "Membre Num.",
+        "modifyprofile": "Modifier le profil",
+        "manageprofile": "Gérer le profil",
+        "personalInformation": "Informations personnelles",
+        "manageprice": "Gérer mes prix",
+        "wallet": "Portefeuille",
+        "notifications": "Notifications",
+        "managepaymentmethod": "Gérer les moyens de paiement",
+        "opinion": "Avis",
+        "transferhistory": "Historique virement",
+        "setting": "Paramètres",
+        "tongue": "Langue",
+        "Sponsorship": "Parrainage",
+        "french": "Francais",
+        "_sponsorship": "Se déconnecter"
+    },
+    "settings_page": {
+        "title": "Settings Page",
+        "body": "Some random text.",
+        "language": "Language"
+    },
+
+    "bottom_sheet" : {
+        "sort_by": "Trier par",
+        "lowestPrice":"Prix le plus bas",
+        "highestPrice":"Note la plus haute",
+        "near":"À proximité",
+        "filter_by" : "Filtrer par",
+        "Localisation": "Localisation",
+        "world": "Monde",
+        "category": "Catégorie",
+        "all": "Tout",
+        "courseType": "Type de cours",
+        "inLine": "En ligne",
+        "experience": "Expérience",
+        "gender": "Sexe",
+        "menAndWomen": "Homme et femmes",
+        "date":"Date",
+        "thisWeek": "Cette semaine",
+        "courseLanguage": "Langue des cours",
+        "frenchAndEnglish": "Francais et Anglais",
+        "price": "Prix"
+    },
+    "profile_parameter" : {
+        "profile_photo": "Photo de profil",
+        "visible" : "Visible",
+        "modify" : "Modifier",
+        "adjust" : "Ajouter",
+        "delete" : "Supprimer"
+    }, 
+    "payment_bottom_sheet" : {
+        "add_payment" : "Ajoutez un moyen de paiement",
+        "delete" : "Supprimer",
+        "owner" : "Propriétaire",
+        "owner_placeholder" : "Joshua Cabrolié",
+        "expires" : "Expire le",
+        "expires_placeholder" : "Expire le",
+        "card_number_placeholder" : "1244 1234 1345 3255",
+        "add_card" : "Add Card",
+        "expiry_date_placeholder": "09/22"
+    },
+     "avis_page" : {
+         "avis" : "Avis",
+         "tab1" : "Reçus",
+         "tab2"  : "Laissés",
+         "note" : "NOTE",
+         "rating" : "3,5/5",
+         "excellent" : "Excellent",
+         "well" : "Bien",
+         "correct":  "Correct",
+         "disappointing": "Décevant",
+         "trash" : "Très décevant",
+         "no_of_comments": "2 avis",
+        "person1_name": "Maude Hall",
+        "Person2_name": "Pierre Damien",
+        "person1_comment" : "Super séance je recommande !",
+        "person2_comment" : "Coach vraiment à l’écoute, j’ai passé un super moment avec Pierre. Merci !",
+        "person1_rating" : "Bien",
+        "person2_rating" : "Excellent",
+        "person1_date": "6 novembre 2021",
+        "person2_date": "25 Août 2021"
+     }, 
+     "payment_history" : {
+         "paymentHistory" : "Historique de paiement",
+         "invoices" : "Factures"
+     },
+     "parameter_page": { 
+        "settings" :"Paramètres",
+        "account": "Compte",
+        "password" : "Mot de passe",
+        "rate_application" : "Noter l’application",
+        "aid" : "Aide",
+        "version" : "Version",
+        "terms_and_conditions" : "Conditions générales",
+        "data_protection" : "Protection des données"
+     },
+     "notification_setting_page": {
+         "notifications" : "Notifications",
+         "push_notifications" : "Notifications push",
+         "appointment_remainder" : "Rappel de rendez-vous",
+         "add" : "Ajouter",
+         "email" : "E-mails ",
+         "sms" : "SMS"
+     }
+}
