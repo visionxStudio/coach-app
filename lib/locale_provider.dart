@@ -1,7 +1,6 @@
+import 'package:digicoach/src/common/service/shared_pref_provider.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'src/common/service/shared_pref_provider.dart';
 
 const _localeKey = 'locale';
 

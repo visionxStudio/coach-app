@@ -1,11 +1,8 @@
-import 'package:digicoach/app_localization.dart';
-import 'package:digicoach/src/common/constants/asset_image_link.dart';
 import 'package:digicoach/src/common/constants/constants.dart';
-import 'package:digicoach/src/common/widgets/appbar/default_appbar.dart';
 import 'package:digicoach/src/common/widgets/size/custom_size_widget.dart';
 import 'package:digicoach/src/common/widgets/text/custom_normal_text_widget.dart';
-import 'package:digicoach/src/features/payment_history/model/payment_history_model.dart';
 import 'package:flutter/material.dart';
+import 'package:auto_route/auto_route.dart';
 
 class PaymentHistoryPage extends StatelessWidget {
   const PaymentHistoryPage({Key? key}) : super(key: key);
@@ -13,96 +10,125 @@ class PaymentHistoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: DefaultAppbar(
-        title: "payment_history.paymentHistory".tr(context),
+      backgroundColor: kScafoldColor,
+      appBar: AppBar(
+        backgroundColor: kWhiteColor,
+        elevation: 0,
+        leading: BackButton(
+          onPressed: () {
+            context.router.navigateBack();
+          },
+          color: kPrimaryColor,
+        ),
+        title: const NormalText(
+          'payment_history.paymentHistory',
+          isBold: true,
+          color: kPrimaryColor,
+          fontSize: 14,
+        ),
+        centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 8.0),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SingleChildScrollView(
           child: Column(
             children: [
-              const HeightWidget(kDefaultmargin + 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                    onTap: () {},
-                    child: const Icon(
-                      Icons.arrow_back,
-                      color: kPrimaryColor,
-                    ),
-                  ),
-                  Column(
-                    children: [
-                      NormalText(
-                        "payment_history.invoices".tr(context),
-                        fontWeight: FontWeight.w500,
-                        color: kPrimaryColor,
-                      ),
-                      const NormalText(
-                        "Avril/2021",
-                        fontWeight: FontWeight.w500,
-                        color: kLightGreyColor,
-                      )
+              Container(
+                  color: kWhiteColor,
+                  margin:
+                      const EdgeInsets.symmetric(vertical: kDefaultPadding / 2),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: kDefaultPadding),
+                  child: Column(
+                    children: const [
+                      PaymentHistoryAmountWidget(),
+                      PaymentHistoryAmountWidget(),
+                      PaymentHistoryAmountWidget(),
+                      PaymentHistoryAmountWidget(),
                     ],
-                  ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: const Icon(
-                      Icons.arrow_forward,
-                      color: kLightGreyColor,
-                    ),
-                  ),
-                ],
-              ),
-              const HeightWidget(kDefaultmargin + 10),
-              ListView.builder(
-                shrinkWrap: true,
-                itemCount: paymentHistory.length,
-                physics: const BouncingScrollPhysics(),
-                itemBuilder: (BuildContext context, int index) {
-                  final PaymentHistoryModel payment = paymentHistory[index];
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.asset(
-                          IconAsset.cash,
-                          height: 40.0,
-                          width: 40.0,
-                        ),
-                        const WidthWidget(16.0),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            NormalText(
-                              payment.title.toUpperCase(),
-                              color: kPrimaryColor,
-                              isBold: true,
-                            ),
-                            const HeightWidget(8.0),
-                            NormalText(
-                              payment.date,
-                              color: kBlackText,
-                            ),
-                          ],
-                        ),
-                        const Spacer(),
-                        NormalText(
-                          '${payment.amount.toInt()}€',
-                          isBold: true,
-                          fontSize: 20.0,
-                          color: kPrimaryColor,
-                        )
-                      ],
-                    ),
-                  );
-                },
-              )
+                  ))
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class PaymentHistoryAmountWidget extends StatelessWidget {
+  const PaymentHistoryAmountWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(
+        horizontal: kDefaultPadding / 2,
+        vertical: kDefaultmargin / 2,
+      ),
+      child: Column(
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: const [
+                        NormalText(
+                          "#12563899402X",
+                          color: kBottonColor,
+                          fontSize: 14,
+                        ),
+                        WidthWidget(3),
+                        NormalText(
+                          "Total: 29€",
+                          color: kBottonColor,
+                          fontSize: 14,
+                        )
+                      ],
+                    ),
+                    const HeightWidget(5),
+                    const NormalText(
+                      "Méditation en pleine conscience",
+                      fontSize: 12,
+                      color: knavbarInactiveColor,
+                    ),
+                    const HeightWidget(4),
+                    const NormalText(
+                      "Placé le 24 nov. 2021 14:41:21",
+                      fontSize: 10,
+                      color: knavbarInactiveColor,
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.all(9),
+                decoration: BoxDecoration(
+                    color: kProfileEditbuttonColor,
+                    border: Border.all(color: kProfileEditbuttonColor),
+                    borderRadius: BorderRadius.circular(5)),
+                child: Row(
+                  children: const [
+                    Icon(Icons.download_outlined, size: 14),
+                    WidthWidget(8),
+                    NormalText(
+                      "payment_history.invoices",
+                      fontSize: 10,
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+          const Divider()
+        ],
       ),
     );
   }

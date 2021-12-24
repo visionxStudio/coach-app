@@ -1,3 +1,5 @@
+import 'package:digicoach/app_localization.dart';
+import 'package:digicoach/src/common/constants/asset_image_link.dart';
 import 'package:digicoach/src/common/constants/constants.dart';
 import 'package:digicoach/src/common/widgets/bottom_filter_sheet/coach_bottom_filter_sheet.dart';
 import 'package:digicoach/src/common/widgets/input_field/custom_input_filed.dart';
@@ -20,117 +22,50 @@ class _SearchInputFieldWidgetState
 
   @override
   Widget build(BuildContext context) {
-    final searchProvider = ref.watch(searchControllerProvider);
-
-    return Consumer(
-      builder: (context, ref, child) {
-        return SizedBox(
-          width: MediaQuery.of(context).size.width,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Flexible(
-                child: InputField(
-                  // onTap: () {
-                  //   ref
-                  //       .read(searchControllerProvider)
-                  //       .toggleIsSearching(value: true);
-                  // },
-                  onChanged: (String query) {
-                    ref
-                        .read(searchControllerProvider)
-                        .search(searchQuery: query);
-                  },
-                  controller: searchController,
-                  hintText: "Chercher un coachs",
-                  focusNode: searchFocusNode,
-                  icon: const Icon(
-                    Icons.search,
-                    color: kPrimaryColor,
-                  ),
-                  suffix: Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
-                    child: SizedBox(
-                      width: 50.0,
-                      child: RotatedBox(
-                        quarterTurns: 3,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            const Icon(
-                              Icons.tune,
-                              color: kPrimaryColor,
-                            ),
-                            const SizedBox(height: 8.0),
-                            searchProvider.isSearching
-                                ? GestureDetector(
-                                    onTap: () {
-                                      ref
-                                          .read(searchControllerProvider)
-                                          .toggleIsSearching(value: false);
-                                    },
-                                    child: Container(
-                                      height: 14.0,
-                                      width: 14.0,
-                                      decoration: BoxDecoration(
-                                        color: kLightGreyColor,
-                                        borderRadius:
-                                            BorderRadius.circular(30.0),
-                                      ),
-                                      child: const Center(
-                                        child: Icon(
-                                          Icons.close,
-                                          size: 8.0,
-                                          color: kBlackColor,
-                                        ),
-                                      ),
-                                    ),
-                                  )
-                                : const SizedBox(),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  suffixTap: () {
-                    showModalBottomSheet(
-                        isDismissible: true,
-                        shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(16.0),
-                                topRight: Radius.circular(16.0))),
-                        context: context,
-                        builder: (context) {
-                          return const ShowCoachBottomFilterWidget();
-                        });
-                  },
-                  backgroundColor: kSearch,
+    return SizedBox(
+      width: MediaQuery.of(context).size.width,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Flexible(
+            child: InputField(
+              borderRadius: 8.0,
+              onChanged: (String query) {
+                ref.read(searchControllerProvider).search(searchQuery: query);
+              },
+              controller: searchController,
+              hintText: "homepage.search_text".tr(context),
+              focusNode: searchFocusNode,
+              icon: const Icon(
+                Icons.search,
+                color: kDarkGrey,
+              ),
+              suffix: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Image.asset(
+                  IconAsset.searchFilter,
+                  color: kDarkGrey,
+                  height: 4.0,
                 ),
               ),
-              searchProvider.isSearching
-                  ? GestureDetector(
-                      onTap: () {
-                        ref
-                            .read(searchControllerProvider)
-                            .toggleIsSearching(value: false);
-                        searchController.text = "";
-                      },
-                      child: const Text(
-                        "Cancel",
-                        style: TextStyle(
-                          fontSize: 16.0,
-                          color: kPrimaryColor,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    )
-                  : const SizedBox(),
-            ],
+              suffixTap: () {
+                showModalBottomSheet(
+                    isDismissible: true,
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(16.0),
+                            topRight: Radius.circular(16.0))),
+                    context: context,
+                    builder: (context) {
+                      return const ShowCoachBottomFilterWidget();
+                    });
+              },
+              backgroundColor: kWhiteColor,
+            ),
           ),
-        );
-      },
+        ],
+      ),
     );
   }
 }

@@ -1,17 +1,18 @@
+import 'package:digicoach/app_localization.dart';
 import 'package:digicoach/src/common/constants/asset_image_link.dart';
 import 'package:digicoach/src/common/constants/constants.dart';
-import 'package:digicoach/src/common/constants/enums.dart';
-import 'package:digicoach/src/common/constants/strings.dart';
 import 'package:digicoach/src/common/utils/app_size_utils.dart';
-import 'package:digicoach/src/common/widgets/appbar/appbar_background.dart';
 import 'package:digicoach/src/common/widgets/size/custom_size_widget.dart';
 import 'package:digicoach/src/common/widgets/text/custom_normal_text_widget.dart';
+import 'package:digicoach/src/features/home/widgets/custom_chip.dart';
+import 'package:digicoach/src/features/home/widgets/custom_switch.dart';
 import 'package:digicoach/src/features/home/widgets/home_body_widget.dart';
+import 'package:digicoach/src/features/home/widgets/search_input_fiel_widget.dart';
 import 'package:digicoach/src/features/main_dashboard_container/bloc/main_dashboard_controller.dart';
-import 'package:digicoach/src/routes/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:digicoach/src/routes/router.dart';
 
 final _upArrowVisibilityProvider = StateProvider((_) => false);
 
@@ -68,66 +69,42 @@ class _HomePageState extends ConsumerState<HomePage> {
   @override
   Widget build(BuildContext context) {
     final mainProvider = ref.watch(mainDashboardProvider);
-    // mainProvider.onInit();
     if (mainProvider.coachDetailList.isEmpty) {
       return const Center(
         child: NormalText("NO DATA FOUND"),
       );
     }
     return Scaffold(
+      backgroundColor: kScafoldColor,
       appBar: PreferredSize(
-        preferredSize: Size(MediaQuery.of(context).size.width, 60.0),
-        child: AppbarBackgroudWidget(
-          child: Padding(
+        preferredSize: Size(SizeConfig.screenWidth, 170),
+        child: SafeArea(
+          child: Container(
+            color: kScafoldColor,
             padding: const EdgeInsets.symmetric(
                 horizontal: kDefaultPadding, vertical: kDefaultPadding / 2),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
+            child: Column(
               children: [
-                const WidthWidget(20),
-                InkWell(
-                  onTap: () {
-                    //TODO:check either its student or teacher
-                    //if coach then navigate to its respective coach profile setting
-                    //else navigate to respective student profile setting
-                    if (mainProvider.userType == UserType.coach) {
-                      context.router.push(const CoachProfileSettingPageRoute());
-                    } else {
-                      context.router
-                          .push(const StudentProfileSettingPageRoute());
-                    }
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      SizedBox(
-                        width: width(20),
-                        height: height(19),
-                        child: AspectRatio(
-                            aspectRatio: 10,
-                            child: Image.asset(ImageAsset.profile)),
-                      ),
-                      const HeightWidget(2),
-                      const NormalText(
-                        "Profil",
-                        color: kWhiteColor,
-                        fontSize: 13,
-                      ),
-                    ],
-                  ),
+                const HomePageSearch(),
+                Row(
+                  children: [
+                    CustomChip(
+                      title: "homepage.live".tr(context),
+                      isActive: true,
+                    ),
+                    CustomChip(
+                      title: "homepage.video".tr(context),
+                    ),
+                    CustomChip(
+                      title: "homepage.home".tr(context),
+                    ),
+                  ],
                 ),
-                const WidthWidget(20),
-                const Spacer(),
-                const NormalText(
-                  Strings.appName,
-                  color: kWhiteColor,
-                ),
-                const Spacer(),
-                const NormalText(
-                  "Name Surname",
-                  color: kWhiteColor,
-                  fontSize: 14,
-                ),
+                const HeightWidget(8.0),
+                HomePageSwitch(
+                  ref: ref,
+                  mainProvider: mainProvider,
+                )
               ],
             ),
           ),
@@ -140,20 +117,45 @@ class _HomePageState extends ConsumerState<HomePage> {
             scrollController: homepageScrollController,
           ),
           Positioned(
-            bottom: height(65),
+            bottom: height(80),
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
               width: SizeConfig.screenWidth,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.end,
+
                 children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.map,
-                      size: 40,
-                    ),
-                  ),
+                  // InkWell(
+                  //   onTap: () {
+                  //     context.router.push(const MapPageRoute());
+                  //   },
+                  //   child: Container(
+                  //     padding: const EdgeInsets.all(10),
+                  //     decoration: BoxDecoration(
+                  //       color: kPrimaryColor,
+                  //       borderRadius: BorderRadius.circular(20),
+                  //     ),
+                  //     child: Row(
+                  //       crossAxisAlignment: CrossAxisAlignment.center,
+                  //       children: const [
+                  //         Icon(
+                  //           Icons.place_outlined,
+                  //           color: kWhiteColor,
+                  //           size: kDefaultFontSize - 3,
+                  //         ),
+                  //         WidthWidget(8),
+                  //         NormalText(
+                  //           "Place",
+                  //           color: kWhiteColor,
+                  //           fontSize: kDefaultFontSize - 8,
+                  //         ),
+                  //         WidthWidget(10),
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
+
                   // if (homeScrollArrowUp)
                   Consumer(
                     builder: (context, ref, child) {
@@ -181,6 +183,106 @@ class _HomePageState extends ConsumerState<HomePage> {
           )
         ],
       ),
+    );
+  }
+}
+
+class HomePageSearch extends StatelessWidget {
+  const HomePageSearch({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Expanded(child: SearchInputFieldWidget()),
+        const WidthWidget(8.0),
+        Container(
+          height: 46.0,
+          width: 46.0,
+          decoration: BoxDecoration(
+            color: kNavBarBackgroundColor,
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          child: GestureDetector(
+            onTap: () => context.router.push(const MessagePageRoute()),
+            child: Stack(
+              children: [
+                Center(
+                  child: Image.asset(
+                    IconAsset.chatHome,
+                    height: 25.0,
+                    width: 25.0,
+                  ),
+                ),
+                Positioned(
+                  right: 12.0,
+                  top: 12.0,
+                  child: Container(
+                    height: 10.0,
+                    width: 10.0,
+                    decoration: const BoxDecoration(
+                      color: Colors.red,
+                      shape: BoxShape.circle,
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class HomePageSwitch extends StatelessWidget {
+  const HomePageSwitch({
+    Key? key,
+    required this.mainProvider,
+    required this.ref,
+  }) : super(key: key);
+
+  final WidgetRef ref;
+  final MainDashboardProvider mainProvider;
+
+  @override
+  Widget build(BuildContext context) {
+    return Consumer(
+      builder: (ctx, watch, child) {
+        return Container(
+          padding: const EdgeInsets.all(4.0),
+          decoration: BoxDecoration(
+            color: kChipColor,
+            borderRadius: BorderRadius.circular(25.0),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CustomSwitch(
+                title: "homepage.coach".tr(context),
+                // isActive: switchIndex == 0,
+                isActive: mainProvider.topmenuIndex == 3,
+                onTap: () {
+                  mainProvider.changeTopMenuIndex(3);
+                },
+              ),
+              const WidthWidget(4.0),
+              CustomSwitch(
+                title: "homepage.recontres".tr(context),
+                isActive: mainProvider.topmenuIndex == 4,
+                onTap: () {
+                  mainProvider.changeTopMenuIndex(4);
+                },
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

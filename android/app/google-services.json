@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "122903385068",
+    "project_id": "digicoachme-82931",
+    "storage_bucket": "digicoachme-82931.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:122903385068:android:70081986eeb941c8bca6c9",
+        "android_client_info": {
+          "package_name": "com.digicoachme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "122903385068-d7fo822kgvaosucp0ule5k18li0isikt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digicoachme",
+            "certificate_hash": "06eaab137dcda4c81603f36ddb29b7724c34116d"
+          }
+        },
+        {
+          "client_id": "122903385068-klag4okskvveem4kc3va7qg87vrdn8nr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digicoachme",
+            "certificate_hash": "0dd3cf52d892047c0a1c4a85656cc670eab304e7"
+          }
+        },
+        {
+          "client_id": "122903385068-ouvjl5gb65b1sfd7q7nen8li0b5jkb09.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digicoachme",
+            "certificate_hash": "554ee037d91d79a5100616b89cfbed231617b72e"
+          }
+        },
+        {
+          "client_id": "122903385068-d2g1cnkm156el9ivj87pnbfqvqk2ffg6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQj8FTqP7_uGPx8Va6G3bbGxFsLiMbuN4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "122903385068-d2g1cnkm156el9ivj87pnbfqvqk2ffg6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

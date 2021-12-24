@@ -23,48 +23,48 @@ const _lightHeadline1 = TextStyle(
   fontSize: kDefaultFontSize + 14,
   height: 1.5,
   fontWeight: FontWeight.bold,
-  fontFamily: "ubuntu",
+  fontFamily: "Manrope",
 );
 const _lightHeadline2 = TextStyle(
   color: kBlackColor,
   fontSize: kDefaultFontSize + 12,
   height: 1.5,
   fontWeight: FontWeight.bold,
-  fontFamily: "ubuntu",
+  fontFamily: "Manrope",
 );
 const _lightHeadline3 = TextStyle(
   color: kBlackColor,
   fontSize: kDefaultFontSize + 10,
   height: 1.3,
   fontWeight: FontWeight.w600,
-  fontFamily: "ubuntu",
+  fontFamily: "Manrope",
 );
 const _lightHeadline4 = TextStyle(
   color: kBlackColor,
   fontSize: kDefaultFontSize + 8,
   height: 1.2,
   fontWeight: FontWeight.w600,
-  fontFamily: "ubuntu",
+  fontFamily: "Manrope",
 );
 const _lightHeadline5 = TextStyle(
   color: kBlackColor,
   fontSize: kDefaultFontSize + 6,
   height: 1.2,
   fontWeight: FontWeight.w500,
-  fontFamily: "ubuntu",
+  fontFamily: "Manrope",
 );
 const _lightHeadline6 = TextStyle(
   color: kBlackColor,
   fontSize: kDefaultFontSize + 4,
   fontWeight: FontWeight.w500,
   height: 1.2,
-  fontFamily: "ubuntu",
+  fontFamily: "Manrope",
 );
 const _lightBodyText1 = TextStyle(
   color: kGreyColor,
   fontSize: kDefaultFontSize,
   fontWeight: FontWeight.w300,
-  fontFamily: "ubuntu",
+  fontFamily: "Manrope",
 );
 
 /// default style for Text() widget
@@ -72,25 +72,25 @@ const _lightBodyText2 = TextStyle(
   color: kBlackColor,
   fontSize: kDefaultFontSize,
   fontWeight: FontWeight.w300,
-  fontFamily: "ubuntu",
+  fontFamily: "Manrope",
 );
 const _lightSubtitle1 = TextStyle(
   color: kBlackColor,
   fontSize: kDefaultFontSize,
   fontWeight: FontWeight.w300,
-  fontFamily: "ubuntu",
+  fontFamily: "Manrope",
 );
 const _lightSubtitle2 = TextStyle(
   color: kBlackColor,
   fontSize: kDefaultFontSize - 2,
   fontWeight: FontWeight.w300,
-  fontFamily: "ubuntu",
+  fontFamily: "Manrope",
 );
 const _lightCaption = TextStyle(
   color: kGreyColor,
   fontSize: kDefaultFontSize - 4,
   fontWeight: FontWeight.w300,
-  fontFamily: "ubuntu",
+  fontFamily: "Manrope",
 );
 
 /// Dark Theme constants

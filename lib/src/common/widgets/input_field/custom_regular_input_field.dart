@@ -17,6 +17,7 @@ class CustomRegularInputField extends StatefulWidget {
   final bool iscomplete;
   final String? suffix;
   final bool svg;
+  final TextInputType? textInputType;
 
   const CustomRegularInputField({
     Key? key,
@@ -26,6 +27,7 @@ class CustomRegularInputField extends StatefulWidget {
     this.controller,
     this.validator,
     this.errorText,
+    this.textInputType,
     this.svg = false,
     this.padding = const EdgeInsetsDirectional.fromSTEB(20, 4, 0, 0),
     this.onChanged,
@@ -61,6 +63,7 @@ class _CustomRegularInputFieldState extends State<CustomRegularInputField> {
               onChanged: widget.onChanged,
               validator: widget.validator,
               controller: widget.controller,
+              keyboardType: widget.textInputType ?? TextInputType.text,
               obscureText: false,
               decoration: InputDecoration(
                 suffix: complete
@@ -70,6 +73,7 @@ class _CustomRegularInputFieldState extends State<CustomRegularInputField> {
                         color: Colors.red,
                       ),
                 errorText: widget.errorText,
+                errorMaxLines: 1,
                 hintText:
                     AppLocalizations.of(context).translate(widget.hintText),
                 hintStyle: const TextStyle(color: Colors.grey),
@@ -83,37 +87,39 @@ class _CustomRegularInputFieldState extends State<CustomRegularInputField> {
                 focusedBorder: UnderlineInputBorder(
                   borderSide: const BorderSide(
                     color: Colors.grey,
-                    width: 0,
+                    width: 1,
                   ),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 contentPadding:
                     const EdgeInsetsDirectional.fromSTEB(16, 24, 0, 24),
-                prefixIcon: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: widget.svg
-                      ? ShaderMask(
-                          blendMode: BlendMode.srcIn,
-                          shaderCallback: (Rect bounds) {
-                            return ui.Gradient.linear(
-                              const Offset(-4.0, 4.0),
-                              const Offset(4.0, -4.0),
-                              [kIconGradientColor2, kIconGradientColor1],
-                            );
-                          },
-                          child: SvgPicture.asset(
-                            widget.leadingIcon,
-                            width: width(15),
-                            height: height(15),
-                            color: kPrimaryColor,
-                            cacheColorFilter: true,
-                          ),
-                        )
-                      : Image.asset(
-                          widget.leadingIcon,
-                          height: 10.0,
-                        ),
-                ),
+                prefixIcon: widget.leadingIcon.isEmpty
+                    ? null
+                    : Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: widget.svg
+                            ? ShaderMask(
+                                blendMode: BlendMode.srcIn,
+                                shaderCallback: (Rect bounds) {
+                                  return ui.Gradient.linear(
+                                    const Offset(-4.0, 4.0),
+                                    const Offset(4.0, -4.0),
+                                    [kIconGradientColor2, kIconGradientColor1],
+                                  );
+                                },
+                                child: SvgPicture.asset(
+                                  widget.leadingIcon,
+                                  width: width(15),
+                                  height: height(15),
+                                  color: kPrimaryColor,
+                                  cacheColorFilter: true,
+                                ),
+                              )
+                            : Image.asset(
+                                widget.leadingIcon,
+                                height: 10.0,
+                              ),
+                      ),
               ),
             ),
           ),

@@ -1,0 +1,17 @@
+enum AuthResultStatus {
+  successful,
+  emailAlreadyExists,
+  wrongPassword,
+  invalidEmail,
+  userNotFound,
+  userDisabled,
+  operationNotAllowed,
+  tooManyRequests,
+  undefined,
+  emailNotVerified,
+  emailVerified,
+  accountExistsWithDifferentCredential,
+  invalidCredential,
+  invalidVerificationCode,
+  invalidVerificationId,
+}

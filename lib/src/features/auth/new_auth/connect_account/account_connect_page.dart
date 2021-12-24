@@ -5,6 +5,7 @@ import 'package:digicoach/src/common/utils/app_size_utils.dart';
 import 'package:digicoach/src/common/widgets/button/custom_rounded_button.dart';
 import 'package:digicoach/src/common/widgets/size/custom_size_widget.dart';
 import 'package:digicoach/src/common/widgets/text/custom_normal_text_widget.dart';
+import 'package:digicoach/src/features/auth/new_auth/connect_account/widgets/social_login.dart';
 import 'package:digicoach/src/routes/router.dart';
 import 'package:flutter/material.dart';
 
@@ -35,39 +36,7 @@ class AccountConnectPage extends StatelessWidget {
                   HeightWidget(SizeConfig.screenHeight < 700 ? 80 : 50.0),
                   Column(
                     children: [
-                      Column(
-                        children: [
-                          CustomRoundedButton(
-                            text: "connect_account.google_connect".tr(context),
-                            backgroundColor: kWhiteColor,
-                            fontColor: kPrimaryColor,
-                            borderRadius: 8.0,
-                            width: SizeConfig.screenWidth * 0.9,
-                            onTap: () {},
-                          ),
-                          HeightWidget(
-                              SizeConfig.screenHeight < 700 ? 12 : 8.0),
-                          CustomRoundedButton(
-                            text:
-                                "connect_account.facebook_connect".tr(context),
-                            backgroundColor: kWhiteColor,
-                            fontColor: kPrimaryColor,
-                            borderRadius: 8.0,
-                            width: SizeConfig.screenWidth * 0.9,
-                            onTap: () {},
-                          ),
-                          HeightWidget(
-                              SizeConfig.screenHeight < 700 ? 12 : 8.0),
-                          CustomRoundedButton(
-                            text: "connect_account.apple_connect".tr(context),
-                            backgroundColor: kWhiteColor,
-                            fontColor: kPrimaryColor,
-                            borderRadius: 8.0,
-                            width: SizeConfig.screenWidth * 0.9,
-                            onTap: () {},
-                          ),
-                        ],
-                      ),
+                      const SocialLogin(),
                       HeightWidget(SizeConfig.screenHeight < 700 ? 30 : 20.0),
                       Column(
                         children: [

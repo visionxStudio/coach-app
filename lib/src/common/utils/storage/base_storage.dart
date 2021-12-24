@@ -8,7 +8,7 @@ class SharedPref {
   static final SharedPref instance = SharedPref._privateConstructor();
 
   /// read from storage
-  read(String key) async {
+  Future<String> read(String key) async {
     final prefs = await SharedPreferences.getInstance();
     String? data = prefs.getString(key);
     return data ?? "";

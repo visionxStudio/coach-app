@@ -1,94 +1,79 @@
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:digicoach/src/common/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class InformationItem extends StatelessWidget {
   final String image;
-  final String data;
+  final double data;
   final String title;
-  final String color;
-  const InformationItem(
-      {Key? key,
-      required this.image,
-      required this.data,
-      required this.title,
-      required this.color})
-      : super(key: key);
-
-  Color colorConvert(String color) {
-    Color backgroundColor = Colors.white;
-    color = color.replaceAll("#", "");
-    if (color.length == 6) {
-      backgroundColor = Color(int.parse("0xFF" + color));
-    } else if (color.length == 8) {
-      backgroundColor = Color(int.parse("0x" + color));
-    }
-    return backgroundColor;
-  }
+  final VoidCallback onTap;
+  const InformationItem({
+    Key? key,
+    required this.image,
+    required this.data,
+    required this.title,
+    required this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final _height = MediaQuery.of(context).size.height;
-    return Container(
-      padding: const EdgeInsets.all(8.0),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16.0),
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 2,
-            offset: const Offset(0, 2),
-            spreadRadius: 0,
-            color: const Color(0xff000000).withOpacity(0.25),
-          )
-        ],
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Center(
-            child: Text(
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.all(16.0),
+        decoration: BoxDecoration(
+          color: kScafoldColor,
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            AutoSizeText(
               title.toUpperCase(),
-              style: TextStyle(
-                color: const Color(0xffBDBDBD),
-                fontSize: _height > 700 ? 16.0 : 12.0,
-                overflow: TextOverflow.fade,
-                fontWeight: FontWeight.w600,
-              ),
+              maxFontSize: kDefaultFontSize - 6,
+              minFontSize: 10,
               maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+                color: kBlackColor,
+                fontWeight: FontWeight.w500,
+              ),
             ),
-          ),
-          Row(
-            children: [
-              Container(
-                height: _height > 700 ? 50.0 : 40,
-                width: _height > 700 ? 50.0 : 40.0,
-                decoration: BoxDecoration(
-                  color: colorConvert(color),
-                  borderRadius: BorderRadius.circular(500.0),
-                ),
-                child: Center(
-                  child: Image.asset(
-                    image,
-                    height: 25.0,
-                    width: 25.0,
+            Row(
+              children: [
+                Container(
+                  height: 36.0,
+                  width: 36.0,
+                  decoration: BoxDecoration(
+                    color: kNavBarBackgroundColor,
+                    borderRadius: BorderRadius.circular(4.0),
+                  ),
+                  child: Center(
+                    child: Image.asset(
+                      image,
+                      height: 25.0,
+                      color: kBottonColor,
+                      width: 25.0,
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(
-                width: 16.0,
-              ),
-              Text(
-                data,
-                style: TextStyle(
-                  color: const Color(0xff4F3A57),
-                  fontSize: _height > 700 ? 28.0 : 20.0,
-                  overflow: TextOverflow.fade,
-                  fontWeight: FontWeight.w700,
+                const SizedBox(
+                  width: 16.0,
                 ),
-                maxLines: 1,
-              ),
-            ],
-          ),
-        ],
+                AutoSizeText(
+                  data.toString(),
+                  maxFontSize: kDefaultFontSize + 2,
+                  minFontSize: kDefaultFontSize,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                      color: kPrimaryColor, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

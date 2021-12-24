@@ -23,6 +23,12 @@ class MainDashboardProvider extends ChangeNotifier {
 //top menu index
   int topmenuIndex = 3;
 
+  // changing the top menu index
+  void changeTopMenuIndex(int index) {
+    topmenuIndex = index;
+    notifyListeners();
+  }
+
   List<CoachStudentModel> studentDetailList = [
     CoachStudentModel(
         id: "1",
@@ -240,11 +246,6 @@ class MainDashboardProvider extends ChangeNotifier {
         fee: 29,
         participant: []),
   ];
-
-  void changeTopMenuIndex(int index) {
-    topmenuIndex = index;
-    notifyListeners();
-  }
 }
 
 

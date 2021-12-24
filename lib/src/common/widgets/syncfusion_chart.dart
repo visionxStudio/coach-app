@@ -1,5 +1,3 @@
-// TODO use fl_chart instead of syncfusion
-
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 

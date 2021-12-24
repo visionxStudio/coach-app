@@ -1,3 +1,4 @@
+import 'package:digicoach/src/common/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class SizeConfig {
@@ -6,6 +7,7 @@ class SizeConfig {
   static late double screenHeight;
   static bool isLandscape = false;
   static bool isdesktop = false;
+  static bool isSmallScreen = false;
 
   void init(BuildContext context) {
     _mediaQueryData = MediaQuery.of(context);
@@ -13,6 +15,9 @@ class SizeConfig {
     screenHeight = _mediaQueryData.size.height;
     isLandscape =
         _mediaQueryData.orientation == Orientation.landscape ? true : false;
+    if (screenHeight < kTabletBreakpoint) {
+      isSmallScreen = true;
+    }
     if (screenWidth > screenHeight && screenWidth > 900) {
       isdesktop = true;
     } else {

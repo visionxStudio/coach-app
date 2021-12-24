@@ -20,10 +20,23 @@ const double kNavBarHeight = 75;
 const Color kScafoldColor = Color(0xFFF5F6FA);
 const Color kBottonColor = Color(0xFF4318FF);
 const Color kTextLinkColor = Color(0xFF3311DB);
+const Color kNavBarBackgroundColor = Color(0xFFF0EFFC);
+const Color knavbarInactiveColor = Color(0xFF8F9BBA);
+const Color kLightBlueTextColor = Color(0xff707EAE);
+const Color kBlueVioletColor = Color(0xFF6236FF);
+const Color kOutlineColor = Color(0xFFE0E5F2);
+// colors for bottommodalsheet continers
+const Color klightBluecolor = Color(0xFFFAFCFE);
+
+const Color kDialogBoxBackground = Color(0xFF5B64CB);
+
+// Colors for chips
+const Color kChipColor = Color(0xFFE9EDF7);
+const Color kCoursesTextColor = Color(0xFF47548C);
 
 const Color kPrimaryColor = Color(0xFF1B2559);
 const Color kSecondaryColor = Color(0xFFE0F3FF);
-const Color kPrimaryColorDark = Color(0xFF0B2B40);
+const Color kPrimaryColorDark = Color(0xFF4318FF);
 const Color kWhiteColor = Color(0xFFFFFFFF);
 const Color kBlackColor = Color(0xFF2B2B2B);
 const Color kGreyColor = Color(0xFF81868A);
@@ -87,3 +100,63 @@ const Color kmasterCardColor = Color(0xFFFFF1DC);
 const Color kIconGradientColor1 = Color(0xFF10A9F3);
 const Color kIconGradientColor2 = Color(0xFF2F00FF);
 const Color kBlackText = Color(0xFF363B46);
+
+const Color kbioColor = Color(0xFF8F9BBA);
+
+const Color kMaptitleText = Color(0xFF333333);
+
+const Color kAddressborder = Color(0xFF4318FF);
+const Color kunSelectedAddressBorder = Color(0xFFE1E9F8);
+
+const Color kScheduleBorder = Color(0xFFEFF4FB);
+
+const Color kbilldownload = Color(0xFFF2F1FD);
+
+const Color kscheduleTextColor = Color(0xFF485585);
+const Color kDocumentTextColor = Color(0xFF6182A9);
+
+const Color kScaffoldBackgroundColor = Color(0xFFF5F6FA);
+
+const Color kaudiobackgroundColor = Color(0xFFE4F8F5);
+const Color kvideobackgroundColor = Color(0xFFDBEEDE);
+const Color khomebackgroundColor = Color(0xFFF6F0DD);
+const Color khourText = Color(0xFF2D396B);
+
+const Color kdisableButton = Color(0xFFE0E5F2);
+
+const Color kcircleButtonBorder = Color(0xFF132C5E);
+
+const Color kProfileEditbuttonColor = Color(0xFFD3CEF7);
+const Color kunfinishedColor = Color(0xFFF45656);
+
+const Color kbuttonsheetText = Color(0xFF505A74);
+const Color kCircleOptionColor = Color(0xFF190793);
+const Color kCircleColor = Color(0xFFD77272);
+const Color kCircleColor1 = Color(0xFFD7A972);
+const Color kdashboardLightColor = Color(0xFF68769F);
+
+// For charts
+const Color kchartBackgroundColor = Color(0xFFF8F8FC);
+const Color klightStar = Color(0xFFE9E3FF);
+
+// button colors
+const Color kcancelBorderColor = Color(0xFFF7CECE);
+const Color kcancelBackgroundColor = Color(0xFFFDF1F1);
+
+const Color kNotificationBorderColor = Color(0xFFD3CEF7);
+const Color kNotificationBackgroundColor = Color(0xFFF2F1FD);
+
+const Color kDiscussionBorderColor = Color(0xFFD3CEF7);
+const Color kDiscussionBackgroundColor = Color(0xFFF2F1FD);
+
+const Color kNotificationColor = Color(0XFFA6ABB9);
+
+const Color kCreditcardColor = Color(0xFF7551FF);
+
+const Color kborderRedColor = Color(0xFFE83D3D);
+
+const Color kiconColor = Color(0xFFFCE4E4);
+
+const Color kselectionColor = Color(0xFF7551FF);
+
+const Color kUnCheck = Color(0xFFC7D3E0);

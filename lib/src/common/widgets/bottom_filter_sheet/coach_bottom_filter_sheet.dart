@@ -187,8 +187,8 @@ class ToggleWidget extends StatelessWidget {
         Switch(
           value: state,
           onChanged: change,
-          activeTrackColor: Colors.lightGreenAccent,
-          activeColor: Colors.green,
+          activeTrackColor: kBottonColor.withOpacity(0.5),
+          activeColor: kBottonColor,
         ),
       ],
     );

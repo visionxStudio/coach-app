@@ -1,17 +1,25 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:digicoach/app_localization.dart';
-import 'package:digicoach/src/common/constants/asset_image_link.dart';
 import 'package:digicoach/src/common/constants/constants.dart';
 import 'package:digicoach/src/common/utils/app_size_utils.dart';
 import 'package:digicoach/src/common/widgets/button/custom_rounded_button.dart';
+import 'package:digicoach/src/common/widgets/date_picker/date_picker.dart';
+import 'package:digicoach/src/common/widgets/image_picker/image_picker_widget.dart';
 import 'package:digicoach/src/common/widgets/input_field/minimal_input_field.dart';
 import 'package:digicoach/src/common/widgets/size/custom_size_widget.dart';
 import 'package:digicoach/src/common/widgets/text/custom_normal_text_widget.dart';
+import 'package:digicoach/src/routes/router.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class DetailsPage extends StatelessWidget {
+class DetailsPage extends ConsumerStatefulWidget {
   const DetailsPage({Key? key}) : super(key: key);
 
+  @override
+  _DetailsPageState createState() => _DetailsPageState();
+}
+
+class _DetailsPageState extends ConsumerState<DetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,23 +61,7 @@ class DetailsPage extends StatelessWidget {
                   color: kLightGreyColor,
                 ),
                 const HeightWidget(8.0),
-                Column(
-                  children: [
-                    Image.asset(
-                      ImageAsset.placeholder,
-                      height: 74.0,
-                      width: 74.0,
-                    ),
-                    const HeightWidget(4.0),
-                    NormalText(
-                      "details_page.add_photo".tr(context),
-                      fontSize: 16.0,
-                      isCentered: true,
-                      fontWeight: FontWeight.w400,
-                      color: kLightGreyColor,
-                    ),
-                  ],
-                ),
+                const ImagePickerWidget(),
                 const HeightWidget(16.0),
                 Column(
                   children: [
@@ -77,10 +69,9 @@ class DetailsPage extends StatelessWidget {
                       hintText: "details_page.name".tr(context),
                       textInputType: TextInputType.name,
                     ),
-                    MinimalInputField(
-                      hintText: "details_page.dob".tr(context),
-                      textInputType: TextInputType.datetime,
-                    ),
+                    const DateTimeWidget(
+                        // onTap: () async {},
+                        ),
                     MinimalInputField(
                       hintText: "details_page.email".tr(context),
                       textInputType: TextInputType.emailAddress,
@@ -98,7 +89,9 @@ class DetailsPage extends StatelessWidget {
                   borderRadius: 8.0,
                   fontWeight: FontWeight.w400,
                   text: "details_page.continue".tr(context),
-                  onTap: () {},
+                  onTap: () {
+                    context.router.push(NavBarRoute());
+                  },
                 ),
                 const HeightWidget(8.0),
                 NormalText(

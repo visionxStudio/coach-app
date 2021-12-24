@@ -1,8 +1,8 @@
-import 'package:auto_route/src/router/auto_router_x.dart';
 import 'package:digicoach/src/common/constants/asset_image_link.dart';
 import 'package:digicoach/src/common/constants/constants.dart';
 import 'package:digicoach/src/common/widgets/text/custom_normal_text_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:auto_route/auto_route.dart';
 
 import '../../../app_localization.dart';
 

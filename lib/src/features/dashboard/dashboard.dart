@@ -1,4 +1,3 @@
-import 'package:digicoach/data/grid_data.dart';
 import 'package:digicoach/src/common/constants/constants.dart';
 import 'package:digicoach/src/common/utils/app_size_utils.dart';
 import 'package:digicoach/src/common/widgets/appbar/appbar_background.dart';
@@ -8,10 +7,7 @@ import 'package:digicoach/src/common/widgets/size/custom_size_widget.dart';
 import 'package:digicoach/src/common/widgets/syncfusion_chart.dart';
 import 'package:digicoach/src/common/widgets/text/custom_normal_text_widget.dart';
 import 'package:digicoach/src/common/widgets/text/shader_text.dart';
-import 'package:digicoach/src/features/dashboard/widgets/information_item.dart';
-import 'package:digicoach/src/features/profile/profile_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class Dashboard extends StatefulWidget {
@@ -26,7 +22,6 @@ class _DashboardState extends State<Dashboard>
   late AnimationController progressController;
   late Animation<double> animation;
   double pts = 82;
-
   @override
   void initState() {
     super.initState();
@@ -88,42 +83,20 @@ class _DashboardState extends State<Dashboard>
                           padding: const EdgeInsets.symmetric(
                               horizontal: 32.0, vertical: 8.0),
                           child: Column(
-                            children: [
-                              const Center(
+                            children: const [
+                              Center(
                                 child: ShaderText(
                                   text: "Informations",
                                   fontSize: 24.0,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
-                              const SizedBox(
+                              SizedBox(
                                 height: 8.0,
                               ),
-                              GridView.builder(
-                                padding: const EdgeInsets.all(4.0),
-                                shrinkWrap: true,
-                                physics: const NeverScrollableScrollPhysics(),
-                                gridDelegate:
-                                    const SliverGridDelegateWithMaxCrossAxisExtent(
-                                  maxCrossAxisExtent: 200,
-                                  // childAspectRatio: 8 / 5,
-                                  childAspectRatio: 1.7,
-                                  crossAxisSpacing: 8,
-                                  mainAxisSpacing: 8,
-                                ),
-                                itemCount: gridData.length,
-                                itemBuilder: (BuildContext ctx, index) {
-                                  return InformationItem(
-                                    data: gridData[index]["data"],
-                                    image: gridData[index]["image"],
-                                    title: gridData[index]["title"],
-                                    color: gridData[index]["background_color"],
-                                  );
-                                },
-                              ),
-                              const SizedBox(height: 8.0),
-                              const StackChart(),
-                              const SizedBox(height: 60.0),
+                              SizedBox(height: 8.0),
+                              StackChart(),
+                              SizedBox(height: 60.0),
                             ],
                           ),
                         ),
@@ -225,7 +198,7 @@ class CircularChart extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final studentProvider = ref.watch(profileController);
+    //final studentProvider = ref.watch(profileController);
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: 16.0,
@@ -307,56 +280,56 @@ class CircularChart extends ConsumerWidget {
               child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              if (studentProvider.isUser)
-                const NormalText(
-                  "Mode visible",
-                  fontSize: kDefaultFontSize - 7,
-                ),
-              if (studentProvider.isUser)
-                Switch(
-                    value: studentProvider.showHideStudentProfileData,
-                    onChanged: (value) {
-                      if (value) {
-                        showDialog(
-                            context: context,
-                            builder: (context) {
-                              return AlertDialog(
-                                title: const NormalText("Information"),
-                                content: const NormalText(
-                                    "Are you Sure ? your information will be visible to other user."),
-                                actions: [
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      SizedBox(
-                                        width: width(100),
-                                        child: CustomElevatedButton(
-                                            label: "Yes",
-                                            onPressed: () {
-                                              studentProvider
-                                                  .changeProfileInformationHideShow(
-                                                      value);
-                                              Navigator.of(context).pop();
-                                            }),
-                                      ),
-                                      const WidthWidget(20),
-                                      SizedBox(
-                                        width: width(100),
-                                        child: CustomElevatedButton(
-                                            label: "No",
-                                            onPressed: () {
-                                              Navigator.of(context).pop();
-                                            }),
-                                      )
-                                    ],
-                                  )
-                                ],
-                              );
-                            });
-                      } else {
-                        studentProvider.changeProfileInformationHideShow(value);
-                      }
-                    }),
+              // if (studentProvider.isUser)
+              //   const NormalText(
+              //     "Mode visible",
+              //     fontSize: kDefaultFontSize - 7,
+              //   ),
+              // if (studentProvider.isUser)
+              Switch(
+                  value: true,
+                  onChanged: (value) {
+                    if (value) {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: const NormalText("Information"),
+                              content: const NormalText(
+                                  "Are you Sure ? your information will be visible to other user."),
+                              actions: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    SizedBox(
+                                      width: width(100),
+                                      child: CustomElevatedButton(
+                                          label: "Yes",
+                                          onPressed: () {
+                                            // studentProvider
+                                            //     .changeProfileInformationHideShow(
+                                            //         value);
+                                            Navigator.of(context).pop();
+                                          }),
+                                    ),
+                                    const WidthWidget(20),
+                                    SizedBox(
+                                      width: width(100),
+                                      child: CustomElevatedButton(
+                                          label: "No",
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          }),
+                                    )
+                                  ],
+                                )
+                              ],
+                            );
+                          });
+                    } else {
+                      // studentProvider.changeProfileInformationHideShow(value);
+                    }
+                  }),
               Image.asset(
                 "assets/images/home.png",
                 height: height(170),

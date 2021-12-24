@@ -139,6 +139,7 @@ class InputTextAreaWidget extends StatelessWidget {
                     child: CustomElevatedButton(
                         backgroundColor: kChatButtonColor,
                         label: 'Envoyer',
+                        fontsize: 14.0,
                         onPressed: () {
                           //homeController.submitdata(args);
                         }),

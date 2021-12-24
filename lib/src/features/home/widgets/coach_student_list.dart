@@ -1,34 +1,47 @@
-import 'package:auto_route/src/router/auto_router_x.dart';
-import 'package:digicoach/src/features/home/widgets/student_dashboard_display_item_widget.dart.dart';
-import 'package:digicoach/src/features/main_dashboard_container/data/coach_student_detail_model.dart';
-import 'package:digicoach/src/routes/app_router.gr.dart';
+import 'package:digicoach/src/common/constants/constants.dart';
+import 'package:digicoach/src/features/home/coach_details/coach_details.dart';
+import 'package:digicoach/src/features/home/data/coach_list.dart';
 import 'package:flutter/material.dart';
 
 import 'coach_dashboarddisplay_item_widget.dart';
 
 class CoachStudentListBuilder extends StatelessWidget {
   const CoachStudentListBuilder(
-      {Key? key, required this.coachStudentLists, required this.isCoach})
+      {Key? key, required this.coachModel, required this.isCoach})
       : super(key: key);
-  final List<CoachStudentModel> coachStudentLists;
+  final List<CoachModel> coachModel;
   final bool isCoach;
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: coachStudentLists.length,
-        shrinkWrap: true,
-        itemBuilder: (context, index) {
-          CoachStudentModel items = coachStudentLists[index];
-          return InkWell(
+      padding: EdgeInsets.zero,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: coachModel.length,
+      shrinkWrap: true,
+      primary: false,
+      itemBuilder: (context, index) {
+        CoachModel items = coachModel[index];
+        return InkWell(
             onTap: () {
-              context.router.push(StudentProfilePageRoute(model: items));
+              showModalBottomSheet(
+                enableDrag: true,
+                isScrollControlled: true,
+                barrierColor: kLightGrey.withOpacity(0.6),
+                backgroundColor: Colors.transparent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(32.0),
+                ),
+                context: context,
+                builder: (context) {
+                  return CoachDetails(coachDetail: items);
+                },
+              );
             },
-            child: isCoach
-                ? CoachDashboardDisplayItemWidget(items: items)
-                : StudentDashboardDisplayItemWidget(items: items),
-          );
-        });
+            child: CoachDashboardDisplayItemWidget(item: items)
+            // : StudentDashboardDisplayItemWidget(items: items),
+            );
+      },
+    );
   }
 }

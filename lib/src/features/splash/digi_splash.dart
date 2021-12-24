@@ -5,8 +5,7 @@ import 'package:digicoach/src/common/constants/asset_image_link.dart';
 import 'package:digicoach/src/common/utils/app_size_utils.dart';
 import 'package:digicoach/src/common/widgets/background_curve_clipper/background_curve_clipper.dart';
 import 'package:digicoach/src/features/auth/bloc/auth_state_notifier.dart';
-import 'package:digicoach/src/features/auth/new_auth/welcome_page/welcome_page.dart';
-import 'package:digicoach/src/routes/app_router.gr.dart';
+import 'package:digicoach/src/routes/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -38,6 +37,7 @@ class _DigiCoachSplashState extends ConsumerState<DigiCoachSplash>
     super.initState();
     // start animating the splash
     _controller.animateTo(1.0);
+    // shareprefrence.clear();
   }
 
   @override
@@ -69,16 +69,17 @@ class _DigiCoachSplashState extends ConsumerState<DigiCoachSplash>
           // only replaces with new route
           await _completer.future
               .then((value) => AutoRouter.of(context).replace(NavBarRoute()));
+          // await _completer.future.then((value) =>
+          //     AutoRouter.of(context).replace(const DetailsCoachPageRoute()));
         },
         unauthenticated: () async {
           await _completer.future.then((value) =>
-              AutoRouter.of(context).replace(const LoginPageRoute()));
-          // AutoRouter.of(context).replace(const WelcomePageRoute()));
+              AutoRouter.of(context).replace(const WelcomePageRoute()));
         },
         unknown: () async {},
       );
     });
-    // TODO: why this is inside build method??
+
     SizeConfig().init(context);
     return Scaffold(
         body: FadeTransition(

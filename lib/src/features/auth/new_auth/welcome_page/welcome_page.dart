@@ -36,135 +36,139 @@ class WelcomePage extends StatelessWidget {
             SizedBox(
               width: width,
               height: height,
-              child: Column(
-                children: [
-                  // HeightWidget(height * 0.1),
-                  SizedBox(
-                    width: double.infinity,
-                    height: height * topHeight,
-                    child: Column(
-                      children: [
-                        HeightWidget(height * 0.1),
-                        NormalText(
-                          "welcome_page.welcome".tr(context),
-                          color: kPrimaryColor,
-                          fontSize: 38.0,
-                          fontWeight: FontWeight.w400,
-                        ),
-                        const HeightWidget(8.0),
-                        NormalText(
-                          "welcome_page.coach_anywhere1".tr(context),
-                          fontSize: 18.0,
-                          color: kDarkGrey,
-                          letterspacing: 0.5,
-                        ),
-                        const HeightWidget(4.0),
-                        NormalText(
-                          "welcome_page.coach_anywhere2".tr(context),
-                          fontSize: 18.0,
-                          letterspacing: 0.5,
-                          color: kDarkGrey,
-                        ),
-                      ],
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(
+                      width: double.infinity,
+                      height: height * topHeight,
+                      child: Column(
+                        children: [
+                          HeightWidget(height * 0.1),
+                          NormalText(
+                            "welcome_page.welcome".tr(context),
+                            color: kPrimaryColor,
+                            fontSize: 38.0,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          const HeightWidget(8.0),
+                          NormalText(
+                            "welcome_page.coach_anywhere1".tr(context),
+                            fontSize: 18.0,
+                            color: kDarkGrey,
+                            letterspacing: 0.5,
+                          ),
+                          const HeightWidget(4.0),
+                          NormalText(
+                            "welcome_page.coach_anywhere2".tr(context),
+                            fontSize: 18.0,
+                            letterspacing: 0.5,
+                            color: kDarkGrey,
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: height * (1 - topHeight),
-                    child: Column(
-                      children: [
-                        const Spacer(),
-                        const Spacer(),
-                        const Spacer(),
-                        Column(
-                          children: [
-                            CustomRoundedButton(
-                              text: "welcome_page.start"
-                                  .tr(context)
-                                  .toUpperCase(),
-                              borderRadius: 8.0,
-                              backgroundColor: kBottonColor,
-                              fontWeight: FontWeight.w400,
-                              width: width * 0.9,
-                              onTap: () {
-                                AutoRouter.of(context)
-                                    .push(const MobileNumberPageRoute());
-                              },
-                            ),
-                            const HeightWidget(16.0),
-                            CustomRoundedButton(
-                              text: "welcome_page.already_account"
-                                  .tr(context)
-                                  .toUpperCase(),
-                              borderRadius: 8.0,
-                              backgroundColor: kWhiteColor,
-                              fontColor: kBlackColor,
-                              width: width * 0.9,
-                              fontWeight: FontWeight.w400,
-                              onTap: () {},
-                            ),
-                          ],
-                        ),
-                        const Spacer(),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 16.0, vertical: 8.0),
-                          child: Center(
-                            child: RichText(
-                              textAlign: TextAlign.center,
-                              text: TextSpan(
-                                children: [
-                                  customTextSpan(
-                                    text: "welcome_page.terms1".tr(context),
-                                    color: ksearchText,
-                                    letterSpacing: 0.4,
-                                    height: 1.5,
-                                    onTap: TapGestureRecognizer()
-                                      ..onTap = () {},
-                                  ),
-                                  customTextSpan(
-                                    text: "welcome_page.terms2".tr(context),
-                                    underLine: true,
-                                    color: ksearchText,
-                                    letterSpacing: 0.4,
-                                    height: 1.5,
-                                    onTap: TapGestureRecognizer()
-                                      ..onTap = () {},
-                                  ),
-                                  customTextSpan(
-                                    text: "welcome_page.terms3".tr(context),
-                                    color: ksearchText,
-                                    letterSpacing: 0.4,
-                                    height: 1.5,
-                                    onTap: TapGestureRecognizer()
-                                      ..onTap = () {},
-                                  ),
-                                  customTextSpan(
-                                    text: "welcome_page.terms4".tr(context),
-                                    color: ksearchText,
-                                    underLine: true,
-                                    letterSpacing: 0.4,
-                                    height: 1.5,
-                                    onTap: TapGestureRecognizer()
-                                      ..onTap = () {},
-                                  ),
-                                  customTextSpan(
-                                    text: "welcome_page.terms5".tr(context),
-                                    color: ksearchText,
-                                    letterSpacing: 0.4,
-                                    height: 1.5,
-                                    onTap: TapGestureRecognizer()
-                                      ..onTap = () {},
-                                  ),
-                                ],
+                    SizedBox(
+                      height: height * (1 - topHeight),
+                      child: Column(
+                        children: [
+                          const Spacer(),
+                          const Spacer(),
+                          const Spacer(),
+                          Column(
+                            children: [
+                              CustomRoundedButton(
+                                text: "welcome_page.start"
+                                    .tr(context)
+                                    .toUpperCase(),
+                                borderRadius: 8.0,
+                                backgroundColor: kBottonColor,
+                                fontWeight: FontWeight.w400,
+                                width: width * 0.9,
+                                onTap: () {
+                                  AutoRouter.of(context)
+                                      .push(const MobileNumberPageRoute());
+                                },
+                              ),
+                              const HeightWidget(16.0),
+                              CustomRoundedButton(
+                                text: "welcome_page.already_account"
+                                    .tr(context)
+                                    .toUpperCase(),
+                                borderRadius: 8.0,
+                                backgroundColor: kWhiteColor,
+                                fontColor: kBlackColor,
+                                width: width * 0.9,
+                                fontWeight: FontWeight.w400,
+                                onTap: () {
+                                  context.router.push(
+                                      const ConnectAccountWithEmailRoute());
+                                },
+                              ),
+                            ],
+                          ),
+                          const Spacer(),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 16.0, vertical: 8.0),
+                            child: Center(
+                              child: RichText(
+                                textAlign: TextAlign.center,
+                                text: TextSpan(
+                                  children: [
+                                    customTextSpan(
+                                      text: "welcome_page.terms1".tr(context),
+                                      color: ksearchText,
+                                      letterSpacing: 0.4,
+                                      height: 1.5,
+                                      onTap: TapGestureRecognizer()
+                                        ..onTap = () {},
+                                    ),
+                                    customTextSpan(
+                                      text: "welcome_page.terms2".tr(context),
+                                      underLine: true,
+                                      color: ksearchText,
+                                      letterSpacing: 0.4,
+                                      height: 1.5,
+                                      onTap: TapGestureRecognizer()
+                                        ..onTap = () {},
+                                    ),
+                                    customTextSpan(
+                                      text: "welcome_page.terms3".tr(context),
+                                      color: ksearchText,
+                                      letterSpacing: 0.4,
+                                      height: 1.5,
+                                      onTap: TapGestureRecognizer()
+                                        ..onTap = () {},
+                                    ),
+                                    customTextSpan(
+                                      text: "welcome_page.terms4".tr(context),
+                                      color: ksearchText,
+                                      underLine: true,
+                                      letterSpacing: 0.4,
+                                      height: 1.5,
+                                      onTap: TapGestureRecognizer()
+                                        ..onTap = () {},
+                                    ),
+                                    customTextSpan(
+                                      text: "welcome_page.terms5".tr(context),
+                                      color: ksearchText,
+                                      letterSpacing: 0.4,
+                                      height: 1.5,
+                                      onTap: TapGestureRecognizer()
+                                        ..onTap = () {},
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        const HeightWidget(16.0),
-                      ],
+                          const HeightWidget(16.0),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],

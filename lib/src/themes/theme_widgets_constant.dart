@@ -11,9 +11,9 @@ final ElevatedButtonThemeData elevatedButtonThemeData = ElevatedButtonThemeData(
       fontWeight: FontWeight.w600,
       fontSize: kDefaultFontSize,
     ),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(10.0),
-    ),
+    // shape: RoundedRectangleBorder(
+    //   borderRadius: BorderRadius.circular(5.0),
+    // ),
     elevation: 0,
   ),
 );
@@ -30,7 +30,7 @@ final OutlinedButtonThemeData outlinedButtonThemeData = OutlinedButtonThemeData(
       fontSize: kDefaultFontSize,
     ),
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(40.0),
+      borderRadius: BorderRadius.circular(5.0),
     ),
     elevation: 0,
   ),
@@ -41,15 +41,15 @@ const InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
   contentPadding: EdgeInsets.fromLTRB(kDefaultPadding, 0, kDefaultPadding, 0),
   border: OutlineInputBorder(
     borderSide: BorderSide(color: kPrimaryColor),
-    borderRadius: BorderRadius.all(Radius.circular(40)),
+    // borderRadius: BorderRadius.all(Radius.circular(5)),
   ),
   focusedBorder: OutlineInputBorder(
     borderSide: BorderSide(color: kPrimaryColor),
-    borderRadius: BorderRadius.all(Radius.circular(40)),
+    // borderRadius: BorderRadius.all(Radius.circular(5)),
   ),
   enabledBorder: OutlineInputBorder(
     borderSide: BorderSide(color: kPrimaryColor),
-    borderRadius: BorderRadius.all(Radius.circular(40)),
+    // borderRadius: BorderRadius.all(Radius.circular(5)),
   ),
   hintStyle: TextStyle(
     color: kBlackColor,

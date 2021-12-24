@@ -45,7 +45,7 @@ class _CustomRadioWidgetState extends State<CustomRadioWidget> {
                             Color(0xff00DBDE),
                           ],
                         )
-                      : LinearGradient(
+                      : const LinearGradient(
                           begin: Alignment.bottomRight,
                           end: Alignment.topLeft,
                           colors: [

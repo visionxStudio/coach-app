@@ -1,3 +1,4 @@
+import 'package:digicoach/app_localization.dart';
 import 'package:digicoach/src/common/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -28,6 +29,8 @@ class InputField extends StatefulWidget {
       this.inputFormatters,
       this.backgroundColor,
       this.suffixTap,
+      this.border = false,
+      this.raidus = true,
       this.maxline = 1})
       : super(key: key);
 
@@ -54,6 +57,8 @@ class InputField extends StatefulWidget {
   final VoidCallback? suffixTap;
   final TextInputAction textInputAction;
   final List<TextInputFormatter>? inputFormatters;
+  final bool border;
+  final bool raidus;
 
   @override
   _InputFieldState createState() => _InputFieldState();
@@ -96,8 +101,12 @@ class _InputFieldState extends State<InputField> {
         autovalidateMode: widget.autovalidateMode,
         maxLines: widget.maxline,
         decoration: InputDecoration(
-          hintStyle:
-              const TextStyle(color: ksearchText, fontWeight: FontWeight.bold),
+          hintStyle: const TextStyle(
+            color: kDarkGrey,
+            fontSize: 14.0,
+            letterSpacing: -0.2,
+            fontWeight: FontWeight.normal,
+          ),
           border: InputBorder.none,
           focusedBorder: InputBorder.none,
           enabledBorder: InputBorder.none,
@@ -105,11 +114,15 @@ class _InputFieldState extends State<InputField> {
           disabledBorder: InputBorder.none,
           contentPadding: widget.icon != null
               ? const EdgeInsets.fromLTRB(0, 13, kDefaultPadding, 0)
-              : const EdgeInsets.fromLTRB(
-                  kDefaultPadding, 0, kDefaultPadding, 0),
+              : widget.maxline > 1
+                  ? const EdgeInsets.fromLTRB(
+                      kDefaultPadding, 5, kDefaultPadding, 15)
+                  : const EdgeInsets.fromLTRB(
+                      kDefaultPadding, 0, kDefaultPadding, 0),
           prefixIcon: widget.icon,
           labelText: widget.label,
-          hintText: widget.hintText,
+          hintText:
+              AppLocalizations.of(context).translate(widget.hintText ?? ''),
           prefixText: widget.prefixText,
           suffixText: widget.suffixText,
           suffixIcon: widget.suffix != null

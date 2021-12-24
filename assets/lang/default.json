@@ -1,69 +1,304 @@
 {
-    "welcome_page" : {
-        "welcome":  "Hey! Bienvenue",
+    "setting_page": {
+        "deletemyaccount": "Supprimer mon compte",
+        "changephoneno": "Changer mon numéro de téléphone",
+        "rateapplication": "Noter l’application",
+        "termsandcondition": "Conditions générales",
+        "dataprotection": "Protection des données",
+        "title": "Paramètres",
+        "deleteaccountwarning": "Êtes-vous sûr de vouloir supprimer votre compte ?",
+        "loseyour": "Vous allez perdre vos",
+        "yesdelete": "Oui, supprimer mon compte",
+        "cancel": "Annuler"
+    },
+    "add_payment_method_page": {
+        "title": "Ajouter un moyen de paiement",
+        "applypay": "Apple Pay",
+        "strip": "Stripe",
+        "savedcard": "Cartes enregistrées",
+        "addmap": "Ajouter une carte"
+    },
+    "notification_page": {
+        "title": "Notifications",
+        "push_notifications": "Notifications push",
+        "stayinformed": "Je reste informé",
+        "before": " minutes avant",
+        "remindar": "Ajoutez un rappel",
+        "hour": "heure",
+        "min": "min",
+        "add": "Ajouter"
+    },
+    "personal_info_page": {
+        "title": "Information personnelles",
+        "dateofbirth": "Date de naissance",
+        "address": "Adresse postale",
+        "continue": "Continuer"
+    },
+    "coach_profile_page": {
+        "title": "Profil",
+        "modify": "Modifier",
+        "sizeweight": "Rapport\nTaille/Poids",
+        "flexibility": "Souplesse",
+        "sleep": "Sommeil",
+        "stress": "Stress",
+        "qualityeating": "Quality of eating",
+        "globalinfo": "Informations globales",
+        "coursecarryout": "Cours effectués",
+        "totaltime": "Temps total",
+        "badges": "Badges",
+        "comments": "Commentaires",
+        "note": "Note",
+        "inregards": "À propos",
+        "coachfile": "Fiche du coach",
+        "sex": "Sexe",
+        "weight": "Poids",
+        "women": "Femme",
+        "age": "Age",
+        "cut": "Taille"
+    },
+    "student_modify_page": {
+        "title": "Modifer profil",
+        "profilepic": "Photo de profil",
+        "goal": "Objectifs",
+        "bio": "Bio",
+        "wellbeing": "Niveau de bien-être",
+        "physicalandmentalinfo": "Informations physiques et mentales",
+        "optionselect": "Selectionner  une option",
+        "opencamera": "Ouvrir ma caméra",
+        "opengallery": "Ouvrir ma galerie",
+        "cancel": "Annuler"
+    },
+    "student_profile_page": {
+        "title": "Compte",
+        "modify": "Modifier",
+        "personalinfo": "Personal info",
+        "manageprofile": "Gérer le profil",
+        "personalInformation": "Informations personnelles",
+        "manageprice": "Gérer mes prix",
+        "wallet": "Portefeuille",
+        "notifications": "Notifications",
+        "managepaymentmethod": "Gérer les moyens de paiement",
+        "opinion": "Avis",
+        "paymenthistory": "Historique paiement",
+        "setting": "Paramètres"
+    },
+    "dashboard_page": {
+        "my_stats": "Mes statistiques",
+        "credit": "À créditer",
+        "achieved": "Atteints",
+        "use_digicoins": "Utiliser vos Digicoins",
+        "global_information": "Informations globales",
+        "course": "Cours effectués",
+        "note": "Note",
+        "badges": "Badges",
+        "comments": "Commentaires",
+        "activity_breakdown": "Répartition de votre activité",
+        "diploma_badges": "Badges diplômants",
+        "activity_badges": "Badges d’activité"
+    },
+    "redeem_page": {
+        "program": "Programme difélité",
+        "loyalty_program": "Programme de fidélité",
+        "achieved": "Atteints",
+        "advantage": "Mes avantages",
+        "reduction": "Réduction",
+        "five_point": "-5% de réduction sur n’importe quel cours sur la plateforme",
+        "fifteen_point": "-10% de réduction sur n’importe quel cours sur la plateforme",
+        "thirty_point": "Carte cadeau de 20 euros à dépenser sur Amazon.fr",
+        "fourtyfive_point": "Carte cadeau de 40 euros à dépenser sur Amazon.fr"
+    },
+    "select_coursetype": {
+        "selectcoursetype": "Sélectionnez les types de cours",
+        "subtitle": "Pour chaque catégorie, vous devez justifier de votre habilité à exercer",
+        "continue": "Continuer"
+    },
+    "course_preferece": {
+        "thanks": "Selectionnez vos préférence de cours et la durée",
+        "choice": "Choix multiple possible",
+        "ingroup": "En groupe",
+        "visio": "Visio",
+        "home": "À domicile",
+        "averageduration": "Durée moyenne du cours",
+        "hour": "heure ",
+        "min": " min",
+        "price": "Prix",
+        "continue": "Continuer"
+    },
+    "finished_page": {
+        "thanks": "Merci beaucoup!",
+        "appointment": "Rendez-vous le",
+        "bill": "Facture",
+        "placedon": "Placé le ",
+        "todiscuss": "Discuter"
+    },
+    "login_page": {
+        "continue": "Continue",
+        "sign_in": "Sign In",
+        "no_account": "Don't have account? Register",
+        "google": "Continue with  Google",
+        "facebook": "Continue With Facebook",
+        "apple": "Continuer avec Apple",
+        "password_rule1": "At least 8 characters • At least 1 numerical",
+        "password_rule2": "• A upper & lower character",
+        "email": "E-mail",
+        "password": "Password",
+        "terms1": "By logging in, you agree to Kootha’s",
+        "terms2": " terms and conditions and privacy policy "
+    },
+    "register": {
+        "create_account": "Créer un compte",
+        "already_account": "Vous avez déjà un compte?"
+    },
+    "confirm_page": {
+        "title": "Confirmer le paiement",
+        "oderinformation": "Information sur la commande",
+        "ordernumber": "Numéro de Commande",
+        "course": "Cours",
+        "recieved": "Reçu",
+        "orderaddress": "Adresse de commande",
+        "methodofpayment": "Méthode de paiement",
+        "price": "Prix",
+        "cost": "Frais",
+        "total": "Total",
+        "confirmpayment": "Confirmer et payer"
+    },
+    "payment_page": {
+        "title": "électionnez le mode de paiement",
+        "applepay": "Apple Pay",
+        "strip": "Stripe",
+        "default": "default",
+        "savecard": "Cartes enregistrées",
+        "addcard": "Add Card"
+    },
+    "appointment_page": {
+        "selectmonth": "Sélectionnez un mois",
+        "jan": "January",
+        "feb": "Feburary",
+        "march": "March",
+        "april": "April",
+        "june": "June",
+        "july": "July",
+        "aug": "August",
+        "sept": "September",
+        "oct": "October",
+        "nov": "November",
+        "dec": "December"
+    },
+    "coach_documents": {
+        "document_verification": "Envoyez-nous vos documents pour vérification",
+        "document_information": "1 ou plusieurs documents suffisent en fonction de vos choix précédents",
+        "professional_card": "Téléchargez votre carte professionnelle",
+        "identity_card": "Téléchargez votre carte d'identité",
+        "download_diplomas": "Téléchargez vos diplômes",
+        "other_documents": "Autres justificatifs",
+        "send": "Envoyer"
+    },
+    "welcome_page": {
+        "welcome": "Hey! Bienvenue",
         "coach_anywhere1": "Faites-vous coacher n'importe ",
         "coach_anywhere2": "où, n'importe quand",
-        "start" : "Commencer",
-        "already_account" : "J’ai déjà un compte",
-        "terms1" : "En vous connectant, vous acceptez les ",
-        "terms2" :" conditions générales d’utilisations et la politique de confidentialité",
-        "terms3" :" de DigiCoachMeEn vous connectant, vous acceptez les",
-        "terms4" : " conditions générales d’utilisations et la politique de confidentialité",
-        "terms5" : " de DigiCoachMe"
+        "start": "Commencer",
+        "already_account": "J’ai déjà un compte",
+        "terms1": "En vous connectant, vous acceptez les ",
+        "terms2": " conditions générales d’utilisations et la politique de confidentialité",
+        "terms3": " de DigiCoachMeEn vous connectant, vous acceptez les",
+        "terms4": " conditions générales d’utilisations et la politique de confidentialité",
+        "terms5": " de DigiCoachMe"
     },
-
-    "mobile_number_page" : {
-        "enter_mobile" : "Entrez votre numéro de mobile",
-        "will_send_otp" : " Nous vous enverrons l'OTP pour vérifier l'utilisateur.",
-        "continue" : "Continuer",
-        "already_account" : "Vous avez déjà un compte?"
+    "mobile_number_page": {
+        "enter_mobile": "Entrez votre numéro de mobile",
+        "will_send_otp": " Nous vous enverrons l'OTP pour vérifier l'utilisateur.",
+        "continue": "Continuer",
+        "already_account": "Vous avez déjà un compte?"
     },
-
-    "verification_page" : {
-        "otp_verification" : "Vous avez déjà un compte?",
-        "five_digit_code" : "Entrez le numéro à cinq chiffres envoyé au numéro de mobile ",
-        "continue" : "Continuer",
-        "resend_otp" : "Vous n'avez pas reçu d'OTP? Renvoyer"
+    "verification_page": {
+        "otp_verification": "Vous avez déjà un compte?",
+        "five_digit_code": "Entrez le numéro à cinq chiffres envoyé au numéro de mobile ",
+        "continue": "Continuer",
+        "resend_otp": "Vous n'avez pas reçu d'OTP? Renvoyer"
     },
-    "connect_account"  : {
-        "connect_social_account" : "Connectez votre compte social",
+    "connect_account": {
+        "connect_social_account": "Connectez votre compte social",
         "google_connect": "Continuer avec Google",
-        "facebook_connect"  : "Continuer avec Facebook",
-        "apple_connect"  : "Continuer avec Apple",
-        "continue"  : "Continuer",
-        "skip_now" : "Ignorer pour l'instant "
+        "facebook_connect": "Continuer avec Facebook",
+        "apple_connect": "Continuer avec Apple",
+        "continue": "Continuer",
+        "skip_now": "Ignorer pour l'instant "
     },
-    "profile_page" :  {
-        "choose_profile" : "Choisissez votre profil",
-        "particular" : "Je suis un particulier",
-        "coach" : "Je suis un coach"
+    "coach_bottomsheet": {
+        "regards": "À propos",
+        "course": "Cours",
+        "show_more": "Voir plus",
+        "show_less": "voir moins",
+        "badges": "Badges Obtenus",
+        "comments": "Commentaires",
+        "more_comments": "Lire tous les commentaires"
     },
-    "details_page" : {
-        "basic_information" : "Informations de base",
-        "little_intro" : "Nous voulons en savoir un peu plus sur vous. Remplissez vos informations de base.",
-        "add_photo" : "Ajoutez votre photo",
-        "name" : "Votre nom",
-        "dob" : "Date de naissance",
-        "email" : "Adresse e-mail",
-        "postal" : "Adresse postale",
-        "continue" : "Continuer",
-        "skip_now" : "Ignorer pour l'instant "
+    "courses": {
+        "live": "En ligne",
+        "home": "À domicile",
+        "share": "Entre amis ",
+        "continue": "Continuer"
     },
-    "wellbeignlevel_page": {
+    "profile_page": {
+        "choose_profile": "Choisissez votre profil",
+        "particular": "Je suis un particulier",
+        "coach": "Je suis un coach"
+    },
+    "details_page": {
+        "basic_information": "Informations de base",
+        "little_intro": "Nous voulons en savoir un peu plus sur vous. Remplissez vos informations de base.",
+        "add_photo": "Ajoutez votre photo",
+        "name": "Votre nom",
+        "dob": "Date de naissance",
+        "email": "Adresse e-mail",
+        "postal": "Adresse postale",
+        "continue": "Continuer",
+        "facebook_connect": "Continuer avec Facebook",
+        "apple_connect": "Continuer avec Apple",
+        "skip_now": "Ignorer pour l'instant ",
+        "language": "Langue de vos cours",
+        "gender_select": "Selectionnez votre genre",
+        "male": "Homme",
+        "female": "FEMME",
+        "other": "AUTRE"
+    },
+    "course_selection": {
+        "select_course": "Selectionnez les catégories de cours que vous allez donner",
+        "course_ability": "Pour chaque catégorie, vous devez justifier de votre habilité à exercer"
+    },
+    "courses_list": {
+        "formatting": "Mise en forme",
+        "meditation": "Méditation",
+        "yoga": "Yoga",
+        "pilates": "Pilates",
+        "nutrition": "Nutrition",
+        "continue": "Continuer"
+    },
+    "homepage": {
+        "search_text": "Rechercher un coach ou un cours",
+        "live": "Lives",
+        "video": "Visio",
+        "home": "À domicile",
+        "coach": "Coachs",
+        "recontres": "Rencontres"
+    },
+    "wellbeign_page": {
         "title": "Niveau de bien-être",
-        "note": "NOTEZ-VOUS\n ET INFORMEZ VOTRE COACH",
-        "flexibilitylevel": "Niveau de souplesse",
+        "informcoach": "Informez votre coach",
+        "flexibility": "Niveau de souplesse",
+        "bad": "Mauvais",
+        "good": "Bien",
+        "well": "Très bien",
         "sleepquality": "Qualité du sommeil",
-        "stresslevel": "Niveau de stress",
+        "Stresslevel": "Niveau de stress",
         "foodquality": "Qualité de l’alimentation",
-        "cancel": "Annuler",
-        "conform": "Confirmer"
+        "confirm": "Confirmer"
     },
     "bio_page": {
         "title": "Bio",
-        "writeyourbio": "ECRIVEZ VOTRE BIO",
-        "message": "Présentez-vous, dites aux coachs ce que vous aimez faire et de ce dont vous avez besoin.",
-        "cancel": "Annuler",
+        "mybio": "Ma bio",
+        "message": "Décrivez-vous à vos coachs",
         "conform": "Confirmer"
     },
     "goals_page": {
@@ -74,9 +309,7 @@
         "stressreduction": "Réduction du stress",
         "increaseflexibility": "Augmenter la flexibilité",
         "discovery": "Découverte",
-        "other": "Autre",
-        "cancel": "Annuler",
-        "conform": "Confirmer"
+        "toadd": "Ajouter"
     },
     "ps_pi_page": {
         "title": "Information personnelles",
@@ -95,37 +328,17 @@
         "wellbinglevel": "Niveau de bien-être",
         "physicalinformation": "Informations physiques"
     },
-    "coach_profile_setting_page": {
-        "profile": "Profil",
-        "Digicoach": "Digicoach",
-        "membernum": "Membre Num.",
-        "modifyprofile": "Modifier le profil",
-        "manageprofile": "Gérer le profil",
-        "personalInformation": "Informations personnelles",
-        "manageprice": "Gérer mes prix",
-        "wallet": "Portefeuille",
-        "notifications": "Notifications",
-        "managepaymentmethod": "Gérer les moyens de paiement",
-        "opinion": "Avis",
-        "transferhistory": "Historique virement",
-        "setting": "Paramètres",
-        "tongue": "Langue",
-        "Sponsorship": "Parrainage",
-        "french": "Francais",
-        "_sponsorship": "Se déconnecter"
-    },
     "settings_page": {
         "title": "Settings Page",
         "body": "Some random text.",
         "language": "Language"
     },
-
-    "bottom_sheet" : {
+    "bottom_sheet": {
         "sort_by": "Trier par",
-        "lowestPrice":"Prix le plus bas",
-        "highestPrice":"Note la plus haute",
-        "near":"À proximité",
-        "filter_by" : "Filtrer par",
+        "lowestPrice": "Prix le plus bas",
+        "highestPrice": "Note la plus haute",
+        "near": "À proximité",
+        "filter_by": "Filtrer par",
         "Localisation": "Localisation",
         "world": "Monde",
         "category": "Catégorie",
@@ -135,71 +348,68 @@
         "experience": "Expérience",
         "gender": "Sexe",
         "menAndWomen": "Homme et femmes",
-        "date":"Date",
+        "date": "Date",
         "thisWeek": "Cette semaine",
         "courseLanguage": "Langue des cours",
         "frenchAndEnglish": "Francais et Anglais",
         "price": "Prix"
     },
-    "profile_parameter" : {
+    "profile_parameter": {
         "profile_photo": "Photo de profil",
-        "visible" : "Visible",
-        "modify" : "Modifier",
-        "adjust" : "Ajouter",
-        "delete" : "Supprimer"
-    }, 
-    "payment_bottom_sheet" : {
-        "add_payment" : "Ajoutez un moyen de paiement",
-        "delete" : "Supprimer",
-        "owner" : "Propriétaire",
-        "owner_placeholder" : "Joshua Cabrolié",
-        "expires" : "Expire le",
-        "expires_placeholder" : "Expire le",
-        "card_number_placeholder" : "1244 1234 1345 3255",
-        "add_card" : "Add Card",
+        "visible": "Visible",
+        "modify": "Modifier",
+        "adjust": "Ajouter",
+        "delete": "Supprimer"
+    },
+    "payment_bottom_sheet": {
+        "add_payment": "Ajoutez un moyen de paiement",
+        "delete": "Supprimer",
+        "owner": "Propriétaire",
+        "owner_placeholder": "Joshua Cabrolié",
+        "expires": "Expire le",
+        "expires_placeholder": "Expire le",
+        "card_number_placeholder": "1244 1234 1345 3255",
+        "add_card": "Add Card",
         "expiry_date_placeholder": "09/22"
     },
-     "avis_page" : {
-         "avis" : "Avis",
-         "tab1" : "Reçus",
-         "tab2"  : "Laissés",
-         "note" : "NOTE",
-         "rating" : "3,5/5",
-         "excellent" : "Excellent",
-         "well" : "Bien",
-         "correct":  "Correct",
-         "disappointing": "Décevant",
-         "trash" : "Très décevant",
-         "no_of_comments": "2 avis",
+    "avis_page": {
+        "avis": "Avis",
+        "tab1": "Reçus",
+        "tab2": "Laissés",
+        "note": "Note",
+        "rating": "3,5/5",
+        "excellent": "Excellent",
+        "well": "Bien",
+        "correct": "Correct",
+        "disappointing": "Décevant",
+        "trash": "Très décevant",
+        "no_of_comments": "2 avis",
         "person1_name": "Maude Hall",
         "Person2_name": "Pierre Damien",
-        "person1_comment" : "Super séance je recommande !",
-        "person2_comment" : "Coach vraiment à l’écoute, j’ai passé un super moment avec Pierre. Merci !",
-        "person1_rating" : "Bien",
-        "person2_rating" : "Excellent",
+        "person1_comment": "Super séance je recommande !",
+        "person2_comment": "Coach vraiment à l’écoute, j’ai passé un super moment avec Pierre. Merci !",
+        "person1_rating": "Bien",
+        "person2_rating": "Excellent",
         "person1_date": "6 novembre 2021",
         "person2_date": "25 Août 2021"
-     }, 
-     "payment_history" : {
-         "paymentHistory" : "Historique de paiement",
-         "invoices" : "Factures"
-     },
-     "parameter_page": { 
-        "settings" :"Paramètres",
+    },
+    "payment_history": {
+        "paymentHistory": "Historique de paiement",
+        "invoices": "Facture"
+    },
+    "parameter_page": {
+        "settings": "Paramètres",
         "account": "Compte",
-        "password" : "Mot de passe",
-        "rate_application" : "Noter l’application",
-        "aid" : "Aide",
-        "version" : "Version",
-        "terms_and_conditions" : "Conditions générales",
-        "data_protection" : "Protection des données"
-     },
-     "notification_setting_page": {
-         "notifications" : "Notifications",
-         "push_notifications" : "Notifications push",
-         "appointment_remainder" : "Rappel de rendez-vous",
-         "add" : "Ajouter",
-         "email" : "E-mails ",
-         "sms" : "SMS"
-     }
+        "password": "Mot de passe",
+        "rate_application": "Noter l’application",
+        "aid": "Aide",
+        "version": "Version",
+        "terms_and_conditions": "Conditions générales",
+        "data_protection": "Protection des données"
+    },
+    "my_appointments": {
+        "title": "MES RDV",
+        "coming_soon": "RDV à venir",
+        "find_coach": "Rechercher un coach ou un cours"
+    }
 }
